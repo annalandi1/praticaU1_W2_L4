@@ -110,5 +110,15 @@ console.log(upperFirst("ciao come state?"))
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
-
+const giveMeRandom = function () {
+    for (let i = 0; i < 5; i++) {
+      // per 3 volte
+      // estraiamo un indice valido dell'array students
+      // tiro il dado! ma il dado estrae 1-6, a noi serve da 0-5
+      const diceResult = createADiceNumber() // numero da 1-6
+      const index = diceResult - 1
+      console.log(students[index])
+    }
+  }
+  
 /* SCRIVI QUI LA TUA RISPOSTA */
