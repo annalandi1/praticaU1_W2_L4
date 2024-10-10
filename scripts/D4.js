@@ -31,19 +31,13 @@ const crazySum = function (num1, num2){
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const crazyDiff = function (num){
-    const difference = num /19
-    const absDiff= Math.abs(difference)
-    const differenceX= absDiff*3
    if (num > 19) {
-    return "la differenza * 3", differenceX
+    return Math.abs(num - 19 )*3
    }else {
-    return "la differenza ",absDiff
+    return Math.abs(num - 19)
    }
 }
-
-let absDiff = crazyDiff(99)// bohhh
-
-
+console.log(crazyDiff(99))
 
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
@@ -52,7 +46,7 @@ let absDiff = crazyDiff(99)// bohhh
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const boundary = function (N){
-    if ( N >= 20 && N <= 100 || N === 400) {
+    if ( N > 20 && N <= 100 || N === 400) {
         return true 
     } else {
         return false
@@ -65,8 +59,14 @@ console.log(boundary(40))
  ritornare la stringa originale senza alterarla.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
-
-
+const epify = function(str){
+    if (str.startsWith("EPICODE")){
+        return str
+    }else{
+        return "EPICODE" + str
+    } 
+}
+epify("EPICODERS")
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
@@ -96,9 +96,17 @@ console.log(reverseString("EPICODE"))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const upperFirst = function (parole){
-    return parole.charAt(0).toUpperCase() + parole.slice(1)
+const upperFirst = function (par){
+   const arrayDiPar =par.split("")
+   for (let i = 0; i < arrayDiPar.length; i++) {
+    arrayDiPar[i] = 
+    arrayDiPar[i].charAt(0).toUpperCase()
+    arrayDiPar[i].slice(1, arrayDiPar[i].length)
+   }
+   const newString = arrayDiPar.join("")
+   return newString
 }
+
 console.log(upperFirst("ciao come state?"))
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -110,15 +118,5 @@ console.log(upperFirst("ciao come state?"))
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
-const giveMeRandom = function () {
-    for (let i = 0; i < 5; i++) {
-      // per 3 volte
-      // estraiamo un indice valido dell'array students
-      // tiro il dado! ma il dado estrae 1-6, a noi serve da 0-5
-      const diceResult = createADiceNumber() // numero da 1-6
-      const index = diceResult - 1
-      console.log(students[index])
-    }
-  }
-  
+
 /* SCRIVI QUI LA TUA RISPOSTA */
